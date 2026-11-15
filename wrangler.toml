@@ -1,0 +1,10 @@
+name = "muse-crm-signal-desk"
+compatibility_date = "2026-11-15"
+
+# Optional Pages/Workers configuration. Deploy the current directory as static assets.
+# Replace the project name if your Cloudflare project uses a different identifier.
+[assets]
+directory = "."
+
+[vars]
+MUSE_BUILD = "02"
