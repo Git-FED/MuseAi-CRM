@@ -1,7 +1,5 @@
 # Muse CRM — Signal Desk
 
-https://github.com/user-attachments/assets/119fc88a-aac4-41a8-b437-350dcf30240d
-
 A dark, browser-based CRM that turns contacts, pipeline, money, and follow-up work into a reviewable daily signal desk.
 
 **Version:** `0.2.0` · **Runtime:** plain HTML, CSS, and browser JavaScript · **Build step:** none
