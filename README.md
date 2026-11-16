@@ -1,8 +1,8 @@
 # Muse CRM — Signal Desk
 
-A dark, static front-end prototype for an AI-monitored CRM that turns scattered business activity into a reviewable daily signal desk.
+A dark, browser-based CRM that turns contacts, pipeline, money, and follow-up work into a reviewable daily signal desk.
 
-**Version:** `0.1.0` · **Runtime:** plain HTML, CSS, and browser JavaScript · **Build step:** none
+**Version:** `0.2.0` · **Runtime:** plain HTML, CSS, and browser JavaScript · **Build step:** none
 
 > Muse is intentionally presented as a review and organization layer. The interface says “Compiled for review — not filed”; it does not claim to file tax returns, act as a CPA, or provide tax advice.
 
@@ -15,7 +15,7 @@ Muse explores a different interaction model: a calm command center with a signal
 The project is useful to designers and front-end developers who want a runnable reference for:
 
 - A dark, non-orbital animated background built from flowing signal ribbons, scan traces, particles, and glow.
-- A static CRM workspace with linked HTML routes instead of dead placeholder buttons.
+- A usable local CRM workspace with persistent browser data, real forms, search, task completion, and export/import.
 - Review-oriented flows for contacts, money trails, automations, audit logs, tax packets, and exports.
 - A public/private navigation model for support, community, age-gated payment controls, and restricted community access.
 - A browser-only prototype that can be opened locally without a framework or package install.
@@ -35,9 +35,9 @@ cd muse-crm-template
 python3 -m http.server 8000
 ```
 
-Open [http://localhost:8000](http://localhost:8000), then try the dashboard’s **Open the workspace**, **Capture**, **Join email list**, **Tax packet**, and campaign-wall routes.
+Open [http://localhost:8000](http://localhost:8000), click **+ Capture**, create a contact or deal, then verify it in **Contacts**, **Search**, and **Money trail**. Use **Full export** to download a JSON backup.
 
-The main entry point is [`index.html`](index.html). The most representative secondary routes are [`pages/payments.html`](pages/payments.html), [`pages/join-email.html`](pages/join-email.html), and [`pages/discord.html`](pages/discord.html). Login stays inline in the dashboard header.
+The main entry point is [`index.html`](index.html). The fastest working CRM flow is **Capture → Contacts → Search → Money trail → Full export**. Login stays inline in the dashboard header; core CRM data does not require an account or backend.
 
 ## Screenshots
 
@@ -102,13 +102,15 @@ It runs the same Python static server on port `8000`; `npm install` is not requi
 
 | Route | What it demonstrates |
 | --- | --- |
-| [`index.html`](index.html) | Main Signal Desk, metrics, signal queue, automation feed, momentum view, campaign wall, and animated background. |
-| [`pages/contacts.html`](pages/contacts.html) | Contact-oriented workspace route. |
-| [`pages/money-trail.html`](pages/money-trail.html) | Money-trail review route. |
+| [`index.html`](index.html) | Live Signal Desk with local CRM counts, open-task queue, pipeline, and animated background. |
+| [`pages/contacts.html`](pages/contacts.html) | Persistent contact table with search, stage filtering, edit, delete, and pipeline totals. |
+| [`pages/money-trail.html`](pages/money-trail.html) | Live pipeline and transaction ledger with income, expenses, and net totals. |
 | [`pages/tax-packet.html`](pages/tax-packet.html) | Tax-packet review language and export-oriented flow. |
 | [`pages/audit-log.html`](pages/audit-log.html) | Explanation and traceability route. |
 | [`pages/automations.html`](pages/automations.html) | Automation review route. |
-| [`pages/export.html`](pages/export.html) | Export/ownership route. |
+| [`pages/export.html`](pages/export.html) | JSON backup, restore, record counts, and local-workspace reset. |
+| [`pages/capture.html`](pages/capture.html) | Working forms for contacts, deals, transactions, and follow-up tasks. |
+| [`pages/search.html`](pages/search.html) | Workspace-wide search across contacts, deals, money, and tasks. |
 | [`pages/payments.html`](pages/payments.html) | Front-end age gate before external support/payment controls. |
 | [`pages/join-email.html`](pages/join-email.html) | Supabase-backed email-list signup, sign-in, password reset, session, and logout UI. |
 | [`pages/discord.html`](pages/discord.html) | Public community buttons, Echoed server preview, plus a confirmation flow for the 18+ option. |
@@ -160,9 +162,9 @@ A workflow exists at [`.github/workflows/pages.yml`](.github/workflows/pages.yml
 
 ## What this is—and is not
 
-This is a standalone static front-end template and product-concept implementation. It is not a production CRM backend, a tax filing service, a CPA, a payment processor, an email-delivery system, or a complete authentication service.
+This is a standalone browser CRM that is usable for a single workspace on one browser. It is not a hosted multi-user CRM backend, a tax filing service, a CPA, a payment processor, an email-delivery system, or a complete authentication service.
 
-There are currently no automated tests, no build pipeline beyond static hosting workflows, no confirmed live demo, and no repository license file. Those omissions are intentional facts about this checkout, not hidden features.
+The core CRM data is stored in browser localStorage, so clearing site data removes the workspace unless you first use Full export. There are no automated tests, no confirmed live demo, and no repository license file. These are intentional facts about this checkout.
 
 ## License
 

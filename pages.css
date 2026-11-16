@@ -4,3 +4,11 @@ body{background:#070a11;color:#eef3f8;font-family:system-ui,sans-serif;margin:0}
 /* Echoed server button accent */
 /* Compact FED-OS footer: keep the signal visible without consuming the page. */
 .fed-footer{margin-top:28px;padding:16px 0 0}.fed-footer-head{align-items:center}.fed-footer-kicker,.fed-footer-label,.fed-footer-bottom,.fed-footer-pulse{font-size:8px}.fed-footer-head h2{margin:5px 0 0;font-size:20px}.fed-footer-marquee{margin:12px 0;padding:6px 0}.fed-footer-marquee-track{gap:14px;font-size:8px}.fed-footer-columns{gap:10px}.fed-footer-group{display:block}.fed-footer-label{display:block;margin-bottom:4px}.fed-footer-btn{min-height:20px;margin:0 3px 3px 0;padding:3px 6px;font-size:9px}.fed-footer-bottom{margin-top:12px;padding:8px 0 0}@media(max-width:800px){.fed-footer-columns{grid-template-columns:repeat(3,1fr)}}@media(max-width:520px){.fed-footer{margin-top:22px;padding-top:13px}.fed-footer-head h2{font-size:18px}.fed-footer-columns{grid-template-columns:repeat(2,1fr);gap:8px}.fed-footer-btn{font-size:8px;padding:3px 5px}.fed-footer-bottom{margin-top:9px}}
+
+/* Every route gets the same living non-orbital signal field as the dashboard. */
+#signal-field{position:fixed;inset:0;width:100%;height:100%;z-index:0;opacity:.72;pointer-events:none}.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E")}.page-shell{position:relative;z-index:2}
+/* Footer motion is intentionally endless on every route. */
+.footer-scanline,.fed-footer-marquee-track,.fed-footer-pulse i{animation-iteration-count:infinite}
+
+/* Compact utility footers also carry an endless signal scan. */
+.footer-links{position:relative;overflow:hidden}.footer-links:before{content:'';position:absolute;top:0;left:-25%;width:24%;height:1px;background:#c8ff5a;box-shadow:0 0 18px rgba(200,255,90,.8);animation:footer-scan 7s linear infinite}
